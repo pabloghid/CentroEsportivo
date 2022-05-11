@@ -11,9 +11,8 @@
     <title>Untitled</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis
-
-    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
   <body>
@@ -31,7 +30,7 @@
                         </ul>
                         <form class="form-inline mr-auto" target="_self">
                             <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
-                        </form><span class="navbar-text"><a href="#" class="login">Log In</a></span><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></div>
+                        </form><span class="navbar-text"><a href="/login" class="btn btn-light action-button" role="button">Entrar</a></span><a class="btn btn-light action-button" role="button" href="/cadastro">Cadastrar</a></div>
                 </div>
             </nav>
         </div>
@@ -217,7 +216,7 @@
 
 @media (min-width:768px) {
   .header-dark {
-    padding-bottom:120px;
+    padding-bottom:7px;
   }
   }
 
@@ -245,10 +244,6 @@
 
 .header-dark .navbar .navbar-brand:hover {
   color:#f0f0f0;
-  }
-
-.header-dark .navbar .navbar-collapse span {
-  margin-top:5px;
   }
 
 .header-dark .navbar .navbar-collapse span .login {
@@ -346,14 +341,6 @@
 .header-dark .navbar .form-inline .search-field:focus {
   border-bottom:1px solid #ccc;
   }
-
-
-
-
-
-
-
-
 
   </style>
 </html> 

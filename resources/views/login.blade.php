@@ -50,8 +50,8 @@ name="viewport">
                           <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
                         </div>
       
-                        <a class="small text-muted" href="#!">Esqueceu a senha?</a>
-                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Não possui uma conta? <a href="#!" style="color: #393f81;">Registre-se</a></p>
+                        <a class="small text-muted" href="#!">Esqueceu a senha? Que pena.</a>
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Não possui uma conta? <a href="/cadastro" style="color: #393f81;">Registre-se</a></p>
  
                       </form>
       

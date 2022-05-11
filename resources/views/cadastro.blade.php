@@ -44,7 +44,7 @@
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1n">Último Nome</label>
+                            <label class="form-label" for="form3Example1n">Sobrenome</label>
                           </div>
                         </div>
                       </div>
@@ -116,8 +116,8 @@
                       </div>
       
                       <div class="d-flex justify-content-end pt-3">
-                        <button type="button" class="btn btn-light btn-lg">Reset all</button>
-                        <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                        <button type="button" class="btn btn-light btn-lg">Limpar Tudo</button>
+                        <button type="button" class="btn btn-warning btn-lg ms-2">Enviar</button>
                       </div>
       
                     </div>
