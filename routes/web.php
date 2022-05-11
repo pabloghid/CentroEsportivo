@@ -28,3 +28,7 @@ Route::get('/login', function () {
 Route::get('/cadastro', function () {
     return view('cadastro');
 });
+
+Route::get('/logado', function () {
+    return view('logado');
+});

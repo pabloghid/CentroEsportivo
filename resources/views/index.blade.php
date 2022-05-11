@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled</title>
+    <title>Thithi</title>
+    <!-- <link rel="shortcut icon" href="/CentroEsportivo/favicon.ico"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
@@ -28,8 +29,7 @@
                                 <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
                             </li>
                         </ul>
-                        <form class="form-inline mr-auto" target="_self">
-                            <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
+                        <form class="form-inline mr-auto" target="_self">                            
                         </form><span class="navbar-text"><a href="/login" class="btn btn-light action-button" role="button">Entrar</a></span><a class="btn btn-light action-button" role="button" href="/cadastro">Cadastrar</a></div>
                 </div>
             </nav>
@@ -280,12 +280,7 @@
   }
 
 .header-dark .navbar.navbar-dark .navbar-nav .nav-link {
-  color: #000000;
-  }
-
-.header-dark .navbar.navbar-dark .navbar-nav .nav-link:focus, .header-dark .navbar.navbar-dark .navbar-nav .nav-link:hover {
-  color:#fcfeff !important;
-  background: color #000000;
+  color: #f0f0f0;
   }
 
 .header-dark .navbar .navbar-nav > li > .dropdown-menu {
@@ -325,22 +320,7 @@
   color:#ccc;
   }
 
-.header-dark .navbar .form-inline .search-field {
-  display:inline-block;
-  width:80%;
-  background:none;
-  border:none;
-  border-bottom:1px solid transparent;
-  border-radius:0;
-  color:#000000;
-  box-shadow:none;
-  color:inherit;
-  transition:border-bottom-color 0.3s;
-  }
 
-.header-dark .navbar .form-inline .search-field:focus {
-  border-bottom:1px solid #ccc;
-  }
 
   </style>
 </html> 
