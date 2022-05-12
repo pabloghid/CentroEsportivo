@@ -32,3 +32,7 @@ Route::get('/cadastro', function () {
 Route::get('/logado', function () {
     return view('logado');
 });
+
+Route::get('/teste', function () {
+    return view('teste');
+});
