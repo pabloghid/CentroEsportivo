@@ -49,18 +49,12 @@
     <div class="wrapper">
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#">
-                        <i class="fas fa-bars"></i>
-                        <span class="sr-only">Toggle navigation</span>
-                    </a>
-                </li>
+
 
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-search"></i>
                     </a>
                     <div class="navbar-search-block">
                         <form class="form-inline" action="#" method="get">
@@ -71,9 +65,6 @@
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                        <i class="fas fa-times"></i>
-                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -81,9 +72,6 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </a>
                 </li>
             </ul>
         </nav>
@@ -99,252 +87,35 @@
             <div class="sidebar">
                 <nav class="pt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
-                        <li>
-                            <div class="form-inline my-2">
-                                <div class="input-group" data-widget="sidebar-search" data-arrow-sign="&raquo;">
-                                    <input class="form-control form-control-sidebar" type="search" placeholder="search" aria-label="search">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-sidebar">
-                                            <i class="fas fa-fw fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <div>
+                            <div class="personal-image">
+                                <label class="label">
+                                    <input type="file" />
+                                    <figure class="personal-figure">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_S8PqFSSWaRXiMw1CdgBjZ4gAXXkJJmWZogBy-lCGThsgxf6Oh6Ed-WECo79buk9ljkc&usqp=CAU" class="personal-avatar" alt="avatar">
+                                        <figcaption class="personal-figcaption">
+                                            <img src="https://raw.githubusercontent.com/ThiagoLuizNunes/angular-boilerplate/master/src/assets/imgs/camera-white.png">
+                                        </figcaption>
+                                    </figure>
+                                </label>
+                                <label>
+                                </label>
                             </div>
-                        </li>
+
+                        </div>
 
                         <li class="nav-item">
-                            <a class="nav-link  " href="http://localhost:8000/admin/pages">
-                                <i class="far fa-fw fa-file "></i>
-                                <p>Pages<span class="badge badge-success right">4</span></p>
-                            </a>
-
+                            <a class="nav-link">
+                                    <p>Meu perfil</p>                           
                         </li>
 
-                        <li class="nav-header ">ATORES</li>
-
-                        <li class="nav-item">
-                            <a class="nav-link active " href="http://localhost:8000/atores"></a>
-                            <i class="fas fa-fw fa-user "></i>
-                            <p>Atores</p>
+                        <li class="nav-item">                                                            
+                                <p>Marcar Jogo</p>
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link  " href="http://localhost:8000/nacionalidades">
-                                <i class="fas fa-fw fa-flag "></i>
-                                <p>Nacionalidades</p>
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link  " href="http://localhost:8000/admin/settings">
-
-                                <i class="fas fa-fw fa-lock "></i>
-
-                                <p>
-                                    Change Password
-
-                                </p>
-
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item has-treeview ">
-
-
-                            <a class="nav-link  " href="">
-
-                                <i class="fas fa-fw fa-share "></i>
-
-                                <p>
-                                    Multi Level
-                                    <i class="fas fa-angle-left right"></i>
-
-                                </p>
-
-                            </a>
-
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-
-                                    <a class="nav-link  " href="#">
-
-                                        <i class="far fa-fw fa-circle "></i>
-
-                                        <p>
-                                            Level 1
-
-                                        </p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item has-treeview ">
-
-
-                                    <a class="nav-link  " href="">
-
-                                        <i class="far fa-fw fa-circle "></i>
-
-                                        <p>
-                                            Level 1
-                                            <i class="fas fa-angle-left right"></i>
-
-                                        </p>
-
-                                    </a>
-
-
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-
-                                            <a class="nav-link  " href="#">
-
-                                                <i class="far fa-fw fa-circle "></i>
-
-                                                <p>
-                                                    Level 2
-
-                                                </p>
-
-                                            </a>
-
-                                        </li>
-
-                                        <li class="nav-item has-treeview ">
-
-
-                                            <a class="nav-link  " href="">
-
-                                                <i class="far fa-fw fa-circle "></i>
-
-                                                <p>
-                                                    Level 2
-                                                    <i class="fas fa-angle-left right"></i>
-
-                                                </p>
-
-                                            </a>
-
-
-                                            <ul class="nav nav-treeview">
-                                                <li class="nav-item">
-
-                                                    <a class="nav-link  " href="#">
-
-                                                        <i class="far fa-fw fa-circle "></i>
-
-                                                        <p>
-                                                            Level 3
-
-                                                        </p>
-
-                                                    </a>
-
-                                                </li>
-
-                                                <li class="nav-item">
-
-                                                    <a class="nav-link  " href="#">
-
-                                                        <i class="far fa-fw fa-circle "></i>
-
-                                                        <p>
-                                                            Level 3
-
-                                                        </p>
-
-                                                    </a>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </li>
-
-                                    </ul>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a class="nav-link  " href="#">
-
-                                        <i class="far fa-fw fa-circle "></i>
-
-                                        <p>
-                                            Level 1
-
-                                        </p>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-                        <li class="nav-header ">
-
-                            LABELS
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link  " href="#">
-
-                                <i class="far fa-fw fa-circle text-red"></i>
-
-                                <p>
-                                    Important
-
-                                </p>
-
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link  " href="#">
-
-                                <i class="far fa-fw fa-circle text-yellow"></i>
-
-                                <p>
-                                    Warning
-
-                                </p>
-
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link  " href="#">
-
-                                <i class="far fa-fw fa-circle text-cyan"></i>
-
-                                <p>
-                                    Information
-
-                                </p>
-
-                            </a>
-
-                        </li>
-
                     </ul>
                 </nav>
             </div>
-
         </aside>
 
 
@@ -354,20 +125,18 @@
 
             <div class="content">
                 <div class="container-fluid">
-                    <h1>Atores</h1>
+                    <h1>Meus horários</h1>
                     <table class="table table-stripe table-bordered table-hover">
                         <thead>
-                            <th>Nome</th>
-                            <th>Data de Nascimento</th>
-                            <th>Ações</th>
+                            <th>Horário</th>
+                            <th>Modalidade</th>
+                            <th>Quadra</th>
                         </thead>
 
                         <tbody>
                         </tbody>
                     </table>
 
-
-                    <a href="http://localhost:8000/atores/create" class="btn btn-info">Adicionar</a>
                 </div>
             </div>
 
@@ -383,4 +152,54 @@
     <script src="http://localhost:8000/vendor/adminlte/dist/js/adminlte.min.js"></script>
 
 </body>
+
 </html>
+
+<style>
+
+
+    .personal-image {
+  text-align: center;
+}
+.personal-image input[type="file"] {
+  display: none;
+}
+.personal-figure {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+.personal-avatar {
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out .3s;
+}
+.personal-avatar:hover {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+.personal-figcaption {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all ease-in-out .3s;
+}
+.personal-figcaption:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .5);
+}
+.personal-figcaption > img {
+  margin-top: 32.5px;
+  width: 50px;
+  height: 50px;
+}
+</style>

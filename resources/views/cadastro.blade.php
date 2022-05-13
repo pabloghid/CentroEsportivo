@@ -38,7 +38,7 @@
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1m">Primeiro Nome</label>
+                            <label class="form-label" for="form3Example1m">Nome</label>
                           </div>
                         </div>
                         <div class="col-md-6 mb-4">
