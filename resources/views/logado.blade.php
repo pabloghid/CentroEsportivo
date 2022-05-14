@@ -1,31 +1,3 @@
-<script>
-    function ConfirmaExclusao(id) {
-        swal.fire({
-            title: 'Confirma exclusão?',
-            text: "Esta ação não poderá ser revertida!",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: 'Sim,excluir',
-            cancelButtonText: "Cancelar",
-            closeOnConfirm: false,
-        }).then(function(isConfirm) {
-            if (isConfirm.value) {
-                $.get('/' + "atores" +
-                    '/' + id + '/destroy',
-                    function(data) {
-                        swal.fire(
-                            'Deletado!',
-                            'Exclusão Confirmada.',
-                            'success'
-                        ).then(function() {
-                            window.location.reload();
-                        });
-                    });
-            };
-        });
-    }
 </script>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,8 +77,10 @@
                         </div>
 
                         <li class="nav-item">
-                            <a class="nav-link">
+                            
+                                <button>
                                     <p>Meu perfil</p>                           
+                                </button>
                         </li>
 
                         <li class="nav-item">                                                            
@@ -132,16 +106,12 @@
                             <th>Modalidade</th>
                             <th>Quadra</th>
                         </thead>
-
                         <tbody>
                         </tbody>
                     </table>
-
                 </div>
             </div>
-
         </div>
-
     </div>
 
 
@@ -152,11 +122,9 @@
     <script src="http://localhost:8000/vendor/adminlte/dist/js/adminlte.min.js"></script>
 
 </body>
-
 </html>
 
 <style>
-
 
     .personal-image {
   text-align: center;

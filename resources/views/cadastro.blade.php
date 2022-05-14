@@ -2,6 +2,16 @@
 <html lang="en">
     
 <head>
+  <script>
+  function limpa() {
+    if(document.getElementById('campo').value!="") {
+      document.getElementById('campo1').value="";
+      document.getElementById('campo2').value="";
+      document.getElementById('campo3').value="";
+      document.getElementById('campo4').value="";
+  }
+  }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="/design.css">
@@ -38,20 +48,20 @@
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1m">Nome</label>
+                            <label class="form-label" for="form3Example1m" names="campo1" id="campo1">Nome</label>
                           </div>
                         </div>
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1n">Sobrenome</label>
+                            <label class="form-label" for="form3Example1n" id="campo2">Sobrenome</label>
                           </div>
                         </div>
                       </div>
             
                       <div class="form-outline mb-4">
                         <input type="text" id="form3Example8" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example8">CPF</label>
+                        <label class="form-label" for="form3Example8" id="campo3">CPF</label>
                       </div>
       
                       <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
@@ -112,12 +122,12 @@
 
                       <div class="form-outline mb-4">
                         <input type="text" id="form3Example99" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example99">E-mail</label>
+                        <label class="form-label" for="form3Example99" id="campo4">E-mail</label>
                       </div>
       
                       <div class="d-flex justify-content-end pt-3">
-                        <button type="button" class="btn btn-light btn-lg">Limpar Tudo</button>
-                        <button type="button" class="btn btn-warning btn-lg ms-2">Enviar</button>
+                        <input type="button" value="Limpa" class="btn btn-light btn-lg" onclick="limpa()" >Limpar Tudo</input>
+                        <button type="button" class="btn btn-warning btn-lg ms-2" >Enviar</button>
                       </div>
       
                     </div>
@@ -130,4 +140,5 @@
       </section>
     
 </body>
-</html>
+ </html>
+
