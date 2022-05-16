@@ -78,14 +78,15 @@
 
                         <li class="nav-item">
                             
-                                <button>
-                                    <p>Meu perfil</p>                           
-                                </button>
+                                <div align='center'>
+                                    <p style='color:#6c757d;'>Meu perfil</p>                           
+                                </div>
                         </li>
-
-                        <li class="nav-item">                                                            
-                                <p>Marcar Jogo</p>
-                            </a>
+                        <div>
+                            <li class="nav-item">                                                            
+                                    <p style='color:#6c757d;'>Marcar Jogo</p>
+                                
+                        </div>
                         </li>
                     </ul>
                 </nav>
