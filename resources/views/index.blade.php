@@ -6,15 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
+    <link rel="stylesheet" href="resources\css\index.css"/>
+    <title>Modalidades</title>
   </head>
 
   <body>
-    <div class="quadro-gramado">
-        <h1>Testes</h1>
-    </div>
-    
+
     <!-- quadros -->
     <section class="quadro-modalidade">
       <div class="card-grid">
@@ -50,8 +47,9 @@
     </section>
       
   </body>
+
   <style>
-    :root{
+  :root{
       --background-dark: #2d3548;
       --text-light: rgba(255,255,255,0.6);
       --text-lighter: rgba(255,255,255,0.9);
@@ -79,10 +77,10 @@
     body{
       height: 100%;
     }
-/* #231F20 */
+
     .quadro-modalidade{
       align-items: flex-start;
-      background-color: #231F20;
+      background-color: #212529;
       display: flex;
       min-height: 100%;
       justify-content: center;
@@ -113,7 +111,7 @@
     .card{
       list-style: none;
       position: relative;
-      background-color: #231F20;
+      background-color: #212529;
       border-radius: 100cm;
     }
 
@@ -122,11 +120,11 @@
       display: block;
       padding-bottom: 150%;
       width: 100%;
-      background-color: #231F20;
+      background-color: #212529;
     }
 
     .card__background{
-      background-color: #231F20;
+      background-color: #212529;
       background-size: cover;
       background-position: center;
       border-radius: var(--spacing-l);
@@ -178,6 +176,5 @@
         width: 100%;
         background-image: url(https://img.freepik.com/fotos-gratis/linha-de-futebol-na-grama-verde-do-campo-de-futebol-fundo-de-campo-gramado-verde_64749-2453.jpg);
     }
-
   </style>
 </html> 

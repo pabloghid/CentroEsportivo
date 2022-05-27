@@ -11,9 +11,9 @@
     </head>
 <body>
 
-    <div class="row">
-        <div class="col-4">
-            <div class="container">
+    <div class="linha">
+        <div class="coluna-45" style = "width: 45%;">
+            <div class="container" >
                 <div class="calendar-assets">
                     <h1 id="currentDate"></h1>
                     <div class="field">
@@ -33,20 +33,53 @@
                     <div class="header">
                         <!-- Aqui é onde ficará o h1 com o mês e o ano -->
                         <div class="month" id="month-header">
-        
+
                         </div>
                         <div class="buttons">
                             <button class="icon" onclick="prevMonth()" title="Mês anterior"><i class="fas fa-chevron-left"></i></button>
                             <button class="icon" onclick="nextMonth()" title="Próximo mês"><i class="fas fa-chevron-right "></i></button>
                         </div>
                     </div>
-                </div>
+                </div>        
+                <script src="https://kit.fontawesome.com/812e771e48.js" crossorigin="anonymous"></script>
             </div>
-        
-            <script src="https://kit.fontawesome.com/812e771e48.js" crossorigin="anonymous"></script>
-
         </div>
-        
+        <div class="coluna-55" style = "width: 55%;">
+            <div class="conteiner" id = "tabela">
+                <table class="table caption-top">
+                    <thead>
+                        <tr>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Dono</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Marcar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">10:00</th>
+                        <td>Eduardo</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">11:00</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">13:00</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 <style>
@@ -74,6 +107,13 @@ textarea {
 
 
 /* Basis */
+
+.linha{
+display: flex;
+flex-flow: row wrap;
+}
+
+
 
 .btn {
     font-family: 'Open Sans';
@@ -162,7 +202,6 @@ textarea {
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background-color: fuchsia;
 
 }     
 
