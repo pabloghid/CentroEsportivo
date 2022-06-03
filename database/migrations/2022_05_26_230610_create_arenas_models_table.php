@@ -14,9 +14,9 @@ class CreateArenasModelsTable extends Migration
     public function up()
     {
         Schema::create('Arenas', function (Blueprint $table) {
-            $table->bigIncrements('arena_id');
+            $table->bigIncrements('id');
             $table->string('nome', 100);
-            $table->integer('preco_id');
+            $table->double('valor', 7, 2);
             $table->string('descricao', 200);
             $table->timestamps();
         });

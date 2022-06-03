@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Modalidade;
 use Illuminate\Http\Request;
-use App\Http\Requests\ModalidadesRequest;
+use App\Http\Requests\ModalidadeRequest;
 
 class ModalidadesController extends Controller
 {
@@ -17,7 +17,7 @@ class ModalidadesController extends Controller
         return view('modalidades.create');
     }
     
-    public function store(ModalidadesRequest $request){
+    public function store(ModalidadeRequest $request){
         $nova_modalidade = $request->all();
         Modalidade::create($nova_modalidade);
         
@@ -29,7 +29,7 @@ class ModalidadesController extends Controller
         return view('modalidades.edit', compact('modalidade'));
     }
     
-    public function update(ModalidadesRequest $request, $id){
+    public function update(ModalidadeRequest $request, $id){
         Modalidade::find($id)->update($request->all());
         return redirect()->route('modalidades');
     }

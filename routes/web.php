@@ -30,3 +30,12 @@ Route::group(['prefix'=>'admin/modalidades'], function() {
     Route::get('{id}/edit',     ['as'=>'modalidades.edit',    'uses'=>'\App\Http\Controllers\ModalidadesController@edit']);
     Route::put('{id}/update',   ['as'=>'modalidades.update',    'uses'=>'\App\Http\Controllers\ModalidadesController@update']);
 });
+
+Route::group(['prefix'=>'admin/arenas'], function() {
+    Route::get('',              ['as'=>'arenas',    'uses'=>'\App\Http\Controllers\ArenasController@index']);
+    Route::get('create',       ['as'=>'arenas.create',    'uses'=>'\App\Http\Controllers\ArenasController@create']);
+    Route::post('store',       ['as'=>'arenas.store',    'uses'=>'\App\Http\Controllers\ArenasController@store']);
+    Route::get('{id}/destroy',  ['as'=>'arenas.destroy',    'uses'=>'\App\Http\ControlleArenasController@destroy']);
+    Route::get('{id}/edit',     ['as'=>'arenas.edit',    'uses'=>'\App\Http\Controllers\ArenasController@edit']);
+    Route::put('{id}/update',   ['as'=>'arenas.update',    'uses'=>'\App\Http\ControllerArenasController@update']);
+});
