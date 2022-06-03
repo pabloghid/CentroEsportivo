@@ -19,7 +19,7 @@
             <div class="col">
               <div class="card card-registration my-4">
                 <div class="row g-0">
-                  <div class="col-xl-6 d-none d-xl-block" asasasasasasasasasasasas>
+                  <div class="col-xl-6 d-none d-xl-block" >
                     <img
                       src="https://www.wallpapertip.com/wmimgs/82-825920_neymar-digital-art.jpg"
                       height="10%"

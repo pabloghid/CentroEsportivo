@@ -39,3 +39,20 @@ Route::group(['prefix'=>'admin/arenas'], function() {
     Route::get('{id}/edit',     ['as'=>'arenas.edit',    'uses'=>'\App\Http\Controllers\ArenasController@edit']);
     Route::put('{id}/update',   ['as'=>'arenas.update',    'uses'=>'\App\Http\ControllerArenasController@update']);
 });
+
+
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/horarios', function () {
+    return view('selecHorario');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/cadastro', function () {
+    return view('cadastro');
+});
