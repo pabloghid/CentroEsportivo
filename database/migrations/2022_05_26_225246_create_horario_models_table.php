@@ -15,10 +15,8 @@ class CreateHorarioModelsTable extends Migration
     {
         Schema::create('Horarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('hora_ini');
-            $table->dateTime('hora_fim');
-            $table->integer('arena_id');
-            $table->integer('usuario_id');
+            $table->time('hora_ini');
+            $table->time('hora_fim');
             $table->timestamps();
         });
     }

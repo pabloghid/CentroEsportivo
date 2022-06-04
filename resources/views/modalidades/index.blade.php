@@ -2,8 +2,6 @@
 @section('title', 'Modalidades')
 @section('content')
 <h1>Aqui listará as modalidades</h1>
-
-
         <table class="table">
           <thead>
             <tr>
@@ -28,5 +26,4 @@
           </tbody>
         </table>
       <a href="{{route('modalidades.create', []) }}" class="btn-sm  btn-info">Adicionar</a>
-  </div>
 @endsection

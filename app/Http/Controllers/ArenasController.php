@@ -18,8 +18,8 @@ class ArenasController extends Controller
     }
     
     public function store(ArenaRequest $request){
-        $nova_modalidade = $request->all();
-        Arena::create($nova_modalidade);
+        $nova_arena = $request->all();
+        Arena::create($nova_arena);
         
         return redirect()->route('arenas');
     }

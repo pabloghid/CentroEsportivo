@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Horario extends Model
 {
     protected $table = 'Horarios';
-    use HasFactory;
+    protected $fillable = ['hora_ini', 'hora_fim'];
 }
