@@ -3,7 +3,6 @@
 @section('content')
 <h1>Aqui listará as modalidades da arena</h1>
 
-{{print_r($arena)}}
 <table class="table">
   <thead>
     <tr>
@@ -16,8 +15,8 @@
     @foreach ($arenaModalidades as $arenaModalidade)
     <tr>
       <th scope="row">{{$arenaModalidade->id}}</th>
-      <td>{{$arenaModalidade->arena_id}} </td>
-      <td>{{$arenaModalidade->modalidade_id}} </td>
+      <td>{{\App\Models\Arena::find($arenaModalidade->arena_id)->nome}} </td>
+      <td>{{\App\Models\Modalidade::find($arenaModalidade->modalidade_id)->nome}} </td>
       <td>
         <a href="{{route('arenaModalidades.edit', ['id'=>$arenaModalidade->id]) }}"
           class="btn-sm  btn-success">Editar</a>

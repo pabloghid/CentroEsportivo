@@ -12,18 +12,7 @@ class ArenaModalidadesController extends Controller
 {
     public function index(){
         $arenaModalidades = ArenaModalidade::all();
-        $arenaArray = [];
-        $modalidadeArray = [];
-        $count = 0;
-        foreach($arenaModalidades as $arenaModalidade){
-            $count = $count + 1;
-            $arena = Arena::where('id', "$arenaModalidade[arena_id]")->get()->toArray();
-            $modalidade = Modalidade::where('id', "$arenaModalidade[modalidade_id]")->get()->toArray();
-            array_push($arenaArray, $arena);
-            array_push($modalidadeArray, $modalidade);
-        }
-        print_r($arena);
-        return view('arenaModalidades.index', ['arenaModalidades'=>$arenaModalidades, 'arena'=>$arenaArray, 'modalidade'=>$modalidadeArray]);
+        return view('arenaModalidades.index', ['arenaModalidades'=>$arenaModalidades]);
     }
 
     public function create(){

@@ -18,9 +18,6 @@
     <label for="horario_id">Horários: </label>
     <select name="horario_id" id="horario_id">
         <option>Carregar Horários</option>
-        {{-- @foreach ($horariosDisponiveis as $horario)
-        <option value="{{$horario->id}}">{{$horario->hora_ini}} - {{$horario->hora_fim}}</option>
-        @endforeach --}}
     </select>
 </div>
 <div class="form-group mt-2">
