@@ -11,7 +11,7 @@ name="viewport">
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <section class="vh-100" style="background-image: url('https://www.teahub.io/photos/full/84-844838_2560x1440-fc-barcelona-camp-nou-mosaic-ucl-wallpaper.jpg'); ">
+    <section class="vh-100" style="background-color:#212529 ">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">
@@ -19,13 +19,13 @@ name="viewport">
                 <div class="row g-0">
                   <div class="col-md-6 col-lg-5 d-none d-md-block">
                     <img
-                      src="https://images.ctfassets.net/3mv54pzvptwz/60OuRSAurNnU87BhrCOzlu/3b9e76a614e6195a2721047a9af5f751/001.jpg"
+                      src="https://i.pinimg.com/564x/6a/8b/80/6a8b80f6cedfdbad097f601f39b892e2.jpg"
                       alt="login form"
                       class="img-fluid" style="border-radius: 1rem 0 0 1rem;"
                     />
                   </div>
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                    <div class="card-body p-4 p-lg-5 text-black">
+                    <div class="card-body p-4 p-lg-5 text-black" style="background-color:#ffffe0">
       
                       <form>
       
@@ -51,7 +51,7 @@ name="viewport">
                         </div>
       
                         <a class="small text-muted" href="#!">Esqueceu a senha?</a>
-                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Não possui uma conta? <a href="#!" style="color: #393f81;">Registre-se</a></p>
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Não possui uma conta? <a href="http://127.0.0.1:8000/cadastro" style="color: #393f81;">Registre-se</a></p>
  
                       </form>
       
