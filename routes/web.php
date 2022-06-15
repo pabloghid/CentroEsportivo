@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -73,4 +73,16 @@ Route::group(['prefix' => 'jogos'], function () {
     Route::get('{id}/destroy',  ['as' => 'jogos.destroy',    'uses' => '\App\Http\Controllers\JogosController@destroy']);
     Route::get('{id}/edit',     ['as' => 'jogos.edit',    'uses' => '\App\Http\Controllers\JogosController@edit']);
     Route::put('{id}/update',   ['as' => 'jogos.update',    'uses' => '\App\Http\Controllers\JogosController@update']);
+});
+
+Route::group(['prefix' => 'login'], function () {
+    Route::get('',             ['as' => 'login',    'uses' => '\App\Http\Controllers\LoginController@index']);
+    Route::post('verificar',    ['as' => 'login.verificar',    'uses' => '\App\Http\Controllers\LoginController@verificar']);
+    Route::get('sucesso',    ['as' => 'login.sucesso',    'uses' => '\App\Http\Controllers\LoginController@loginSucesso']);
+    /* Route::get('teste',    ['as' => 'login.teste',    'uses' => '\App\Http\Controllers\LoginController@index']); */
+    Route::get('create',       ['as' => 'registrar',    'uses' => '\App\Http\Controllers\PessoaController@create']);
+    Route::post('store',       ['as' => 'registrar.store',    'uses' => '\App\Http\Controllers\PessoaController@store']);
+/*     Route::get('{id}/destroy',  ['as' => 'jogos.destroy',    'uses' => '\App\Http\Controllers\PessoaController@destroy']);
+    Route::get('{id}/edit',     ['as' => 'jogos.edit',    'uses' => '\App\Http\Controllers\PessoaController@edit']);
+    Route::put('{id}/update',   ['as' => 'jogos.update',    'uses' => '\App\Http\Controllers\JogosController@update']); */
 });
