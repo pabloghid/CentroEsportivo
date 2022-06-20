@@ -36,24 +36,27 @@
               <div class="card" style="border-radius: 1rem;">
                 <div class="row g-0">
 
-                  <h2 style="font-family: Constantia; font-weight: bold; padding: 5px;  text-align: center;"> Modalidade </h2>
+                  <h2 style="font-family: Constantia; font-weight: bold; padding: 5px;  text-align: center;"> Arenas </h2>
                   
                   <div class = "tabela">
-                    <h5 class="fw-normal " style="letter-spacing: 1px;">Modalidade cadastradas</h5>
+                    <h5 class="fw-normal " style="letter-spacing: 1px;">Arenas cadastradas</h5>
 
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">Nome</th>
+                          <th scope="col">Valor</th>
+                          <th scope="col">Descrição</th>
                           <th scope="col"></th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <th scope="row">1</th>
-                          <td>Futebol 7</td>
-                          <td></td>
+                          <td>Quadra areia 1</td>
+                          <td>100,00</td>
+                          <td>Quadra com vista para o mar</td>
                           <td>
                             <button type="button" class="btn btn-primary">Editar</button>
                             <button type="button" class="btn btn-danger">Apagar</button>
@@ -61,8 +64,9 @@
                         </tr>
                         <tr>
                           <th scope="row">2</th>
-                          <td>Salão</td>
-                          <td></td>
+                          <td>Quadra salao 1</td>
+                          <td>100,00</td>
+                          <td>Quadra sem arquibancada</td>
                           <td>
                             <button type="button" class="btn btn-primary">Editar</button>
                             <button type="button" class="btn btn-danger">Apagar</button>
@@ -70,8 +74,9 @@
                         </tr>
                         <tr>
                           <th scope="row">3</th>
-                          <td>Volei de areia</td>
-                          <td></td>
+                          <td>Quadra salao 2</td>
+                          <td>100,00</td>
+                          <td>Quadra com arquibancada</td>
                           <td>
                             <button type="button" class="btn btn-primary">Editar</button>
                             <button type="button" class="btn btn-danger">Apagar</button>

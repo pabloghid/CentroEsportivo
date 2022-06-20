@@ -11,6 +11,7 @@
     <title>Registrar</title>
 </head>
   <body>
+  
 
   <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -36,53 +37,16 @@
               <div class="card" style="border-radius: 1rem;">
                 <div class="row g-0">
 
-                  <h2 style="font-family: Constantia; font-weight: bold; padding: 5px;  text-align: center;"> Modalidade </h2>
-                  
-                  <div class = "tabela">
-                    <h5 class="fw-normal " style="letter-spacing: 1px;">Modalidade cadastradas</h5>
+                  <h2 style="font-family: Constantia; font-weight: bold; padding: 5px;  text-align: center;"> Cadastrar uma Modalidade </h2>
 
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Nome</th>
-                          <th scope="col"></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Futebol 7</td>
-                          <td></td>
-                          <td>
-                            <button type="button" class="btn btn-primary">Editar</button>
-                            <button type="button" class="btn btn-danger">Apagar</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Salão</td>
-                          <td></td>
-                          <td>
-                            <button type="button" class="btn btn-primary">Editar</button>
-                            <button type="button" class="btn btn-danger">Apagar</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Volei de areia</td>
-                          <td></td>
-                          <td>
-                            <button type="button" class="btn btn-primary">Editar</button>
-                            <button type="button" class="btn btn-danger">Apagar</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div calss = "select" style="padding: 10px;">
+                      <h5 class="fw-normal" style="letter-spacing: 1px;">Nome da Modalidade:</h5>
+                      <input class="form-control" id="disabledInput" type="text">
                   </div>
 
-                  <div class = "Botao">
-                    <button type="button" class="btn btn-success">Adicionar</button>
+                  <div class="d-flex justify-content-end pt-3" style="padding: 20px;">
+                    <button type="button" class="btn btn-warning">Gravar</button>
+                    <button type="button" class="btn btn-light">Resetar</button>
                   </div>
 
                 </div>
@@ -94,14 +58,6 @@
 
   </body>
   <style>
-
-    .Botao{
-      margin: 40px;
-    }
-
-    .tabela{
-      padding: 50px;
-    }
 
     .nav-link{
         color: #000000;
