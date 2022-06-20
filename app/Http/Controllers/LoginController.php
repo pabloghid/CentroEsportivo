@@ -31,6 +31,6 @@ class LoginController extends Controller
         //return view('login.teste', ['userDados'=>$userDados]);
     }
     public function loginSucesso(){
-        return view('jogos');
+        return redirect()->route('jogos');
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Pessoa extends Authenticatable
 {
-    use HasFactory;
+    protected $table = 'pessoas';
+    protected $fillable = ['nome', 'email', 'password', 'telefone', 'login'];
 }
 //// https://www.youtube.com/watch?v=OUFmwAnFclo

@@ -66,6 +66,15 @@ Route::group(['prefix' => 'admin/horarios'], function () {
     Route::put('{id}/update',   ['as' => 'horarios.update',    'uses' => '\App\Http\Controllers\HorariosController@update']);
 });
 
+Route::group(['prefix' => 'admin/administradores'], function () {
+    Route::get('',              ['as' => 'administradores',    'uses' => '\App\Http\Controllers\AdminController@index']);
+    Route::get('create',       ['as' => 'administradores.create',    'uses' => '\App\Http\Controllers\AdminController@create']);
+    Route::post('store',       ['as' => 'administradores.store',    'uses' => '\App\Http\Controllers\AdminController@store']);
+    Route::get('{id}/destroy',  ['as' => 'administradores.destroy',    'uses' => '\App\Http\Controllers\AdminController@destroy']);
+    Route::get('{id}/edit',     ['as' => 'administradores.edit',    'uses' => '\App\Http\Controllers\AdminController@edit']);
+    Route::put('{id}/update',   ['as' => 'administradores.update',    'uses' => '\App\Http\Controllers\AdminController@update']);
+});
+
 Route::group(['prefix' => 'jogos'], function () {
     Route::get('',              ['as' => 'jogos',    'uses' => '\App\Http\Controllers\JogosController@index']);
     Route::get('create',       ['as' => 'jogos.create',    'uses' => '\App\Http\Controllers\JogosController@create']);
@@ -80,9 +89,20 @@ Route::group(['prefix' => 'login'], function () {
     Route::post('verificar',    ['as' => 'login.verificar',    'uses' => '\App\Http\Controllers\LoginController@verificar']);
     Route::get('sucesso',    ['as' => 'login.sucesso',    'uses' => '\App\Http\Controllers\LoginController@loginSucesso']);
     /* Route::get('teste',    ['as' => 'login.teste',    'uses' => '\App\Http\Controllers\LoginController@index']); */
-    Route::get('create',       ['as' => 'registrar',    'uses' => '\App\Http\Controllers\PessoaController@create']);
-    Route::post('store',       ['as' => 'registrar.store',    'uses' => '\App\Http\Controllers\PessoaController@store']);
+    /* Route::get('create',       ['as' => 'registrar',    'uses' => '\App\Http\Controllers\PessoaController@create']);
+    Route::post('store',       ['as' => 'registrar.store',    'uses' => '\App\Http\Controllers\PessoaController@store']); */
 /*     Route::get('{id}/destroy',  ['as' => 'jogos.destroy',    'uses' => '\App\Http\Controllers\PessoaController@destroy']);
     Route::get('{id}/edit',     ['as' => 'jogos.edit',    'uses' => '\App\Http\Controllers\PessoaController@edit']);
     Route::put('{id}/update',   ['as' => 'jogos.update',    'uses' => '\App\Http\Controllers\JogosController@update']); */
 });
+
+Route::group(['prefix' => 'registro'], function () {
+    Route::get('',             ['as' => 'registro',    'uses' => 'App\Http\Controllers\RegistroController@index']);
+    Route::post('store',    ['as' => 'registro.store',    'uses' => '\App\Http\Controllers\RegistroController@store']);
+});
+/* Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
+Route::get('registration', [AuthController::class, 'registration'])->name('register');
+Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
+Route::get('dashboard', [AuthController::class, 'dashboard']); 
+Route::get('logout', [AuthController::class, 'logout'])->name('logout'); */

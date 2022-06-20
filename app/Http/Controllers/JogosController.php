@@ -8,12 +8,15 @@ use App\Models\Arena;
 use App\Models\Modalidade;
 use App\Http\Requests\JogoRequest;
 use Illuminate\Support\Facades\DB;
+use App\Models\Pessoa;
 
 class JogosController extends Controller
 {
     public function index(){
         $jogos = Jogo::all();
-        return view('jogos.index', ['jogos'=>$jogos]);
+        $pessoaId = Pessoa::firstWhere('email', 'pablog@gmail.com')->value('id');
+        $jogos = Jogo::Where('usuario_id', $pessoaId)->get();
+        return view('jogos.index', ['jogos'=>$jogos, 'usuarioId' => $pessoaId]);
     }
 
     public function create(){
@@ -51,8 +54,9 @@ class JogosController extends Controller
     
     public function store(JogoRequest $request){
         $novo_jogo = $request->all();
-        $novo_jogo['usuario_id'] = '1';
-        var_dump($novo_jogo);
+        
+        $pessoaId = Pessoa::firstWhere('email', 'pablog@gmail.com')->value('id');
+        $novo_jogo['usuario_id'] = $pessoaId;
         Jogo::create($novo_jogo);
         
         return redirect()->route('jogos');
