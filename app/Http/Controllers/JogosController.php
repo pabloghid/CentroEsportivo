@@ -126,21 +126,6 @@ class JogosController extends Controller
         ]);
     }
 
-    public function getPrevisao1()
-    {
-        $token = '858c4b70060d59a05dac63fefa8fd578';
-        $response = Http::get('https://api.openweathermap.org/data/2.5/forecast?', [
-            'appid' => $token,
-            'q' => 'erechim',
-            'lang' => 'pt_br',
-            'units' => 'metric',
-        ]);
-        dump($response->json());
-        return view('jogos.teste', [
-            "dados" => $response->json()
-        ]);
-    }
-
     public function store(JogoRequest $request)
     {
         $novo_jogo = $request->all();

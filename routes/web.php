@@ -27,9 +27,6 @@ Route::post('/getmsg', '\App\Http\Controllers\AjaxController@index');
 Route::post('/getHorarios', '\App\Http\Controllers\JogosController@getHorarios');
 Route::post('/getArenas', '\App\Http\Controllers\JogosController@getArenas');
 
-Route::get('/getPrevisao1', '\App\Http\Controllers\JogosController@getPrevisao1');
-Route::get('/teste', '\App\Http\Controllers\JogosController@teste');
-
 Route::get('jogos', [\App\Http\Controllers\JogosController::class, 'index']);
 Route::get('jogos/create', [\App\Http\Controllers\JogosController::class, 'create']);
 
@@ -99,24 +96,12 @@ Route::group(['prefix' => 'login'], function () {
     Route::post('verificar',    ['as' => 'login.verificar',    'uses' => '\App\Http\Controllers\LoginController@verificar']);
     Route::get('sucesso',    ['as' => 'login.sucesso',    'uses' => '\App\Http\Controllers\LoginController@loginSucesso']);
     Route::get('loginErro',    ['as' => 'login.loginErrro',    'uses' => '\App\Http\Controllers\LoginController@index']);
-    /* Route::get('teste',    ['as' => 'login.teste',    'uses' => '\App\Http\Controllers\LoginController@index']); */
-    /* Route::get('create',       ['as' => 'registrar',    'uses' => '\App\Http\Controllers\PessoaController@create']);
-    Route::post('store',       ['as' => 'registrar.store',    'uses' => '\App\Http\Controllers\PessoaController@store']); */
-    /*     Route::get('{id}/destroy',  ['as' => 'jogos.destroy',    'uses' => '\App\Http\Controllers\PessoaController@destroy']);
-    Route::get('{id}/edit',     ['as' => 'jogos.edit',    'uses' => '\App\Http\Controllers\PessoaController@edit']);
-    Route::put('{id}/update',   ['as' => 'jogos.update',    'uses' => '\App\Http\Controllers\JogosController@update']); */
 });
 
 Route::group(['prefix' => 'registro'], function () {
     Route::get('',             ['as' => 'registro',    'uses' => 'App\Http\Controllers\RegistroController@index']);
     Route::post('store',    ['as' => 'registro.store',    'uses' => '\App\Http\Controllers\RegistroController@store']);
 });
-/* Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
-Route::get('registration', [AuthController::class, 'registration'])->name('register');
-Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
-Route::get('dashboard', [AuthController::class, 'dashboard']); 
-Route::get('logout', [AuthController::class, 'logout'])->name('logout'); */
 
 
 Route::get('/', function () {
