@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Pessoa;
 use App\Models\Usuario;
+use App\Http\Requests\RegistroRequest;
 
 class RegistroController extends Controller
 {
@@ -28,7 +29,7 @@ class RegistroController extends Controller
         return redirect()->route('jogos');
     }
     
-    public function store(Request $request)
+    public function store(RegistroRequest $request)
     {
       Pessoa::create([
         'nome' => $request['nome'],
@@ -37,7 +38,7 @@ class RegistroController extends Controller
         'email' => $request['email'],
         'password' => Hash::make($request['password'])
       ]);
-      $pessoaId = Pessoa::where('email', 'pablog@gmail.com')->value('id');
+      $pessoaId = Pessoa::where('email', $request['email'])->value('id');
       Usuario::create(['pessoa_id' => $pessoaId]);
       return redirect()->route('jogos');
     }

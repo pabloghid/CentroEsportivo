@@ -6,9 +6,11 @@ use App\Models\Admin;
 use App\Models\Pessoa;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdminRequest;
+use Laravel\Ui\Presets\React;
 
 class AdminController extends Controller
 {
+
     public function index(){
         $admins = Admin::all();
         return view('admins.index', ['admins'=>$admins]);
@@ -19,20 +21,10 @@ class AdminController extends Controller
         return view('admins.create', compact(['pessoas', 'pessoas']));
     }
     
-    public function store(AdminRequest $request){
-        $nova_arena = $request->all();
-        Admin::create($nova_arena);
+    public function store(Request $request){
+        $novo_admin = $request->all();
+        Admin::create($novo_admin);
         
-        return redirect()->route('administradores');
-    }
-
-    public function edit($id){
-        $admins = Admin::find($id);
-        return view('admins.edit', compact('administradores'));
-    }
-    
-    public function update(AdminRequest $request, $id){
-        Admin::find($id)->update($request->all());
         return redirect()->route('administradores');
     }
 

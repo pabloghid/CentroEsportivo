@@ -7,6 +7,7 @@ use App\Http\Requests\LoginRequest;
 use App\Models\Pessoa;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -19,18 +20,20 @@ class LoginController extends Controller
             'email'     => $request->get('email'),
             'password'  => $request->get('password')
         );
-        print_r($userDados);
         if(Auth::attempt($userDados)){
-            print_r('teste');
             return redirect()->route('login.sucesso');
         }
-        else{
-            print_r('nao rolou');
-            print_r(Auth::attempt($userDados));
-        }
-        //return view('login.teste', ['userDados'=>$userDados]);
+        return view('login.loginErro');
     }
+    
     public function loginSucesso(){
         return redirect()->route('jogos');
+    }
+
+    public function logout() {
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect('login');
     }
 }

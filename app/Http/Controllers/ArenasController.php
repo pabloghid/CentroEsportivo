@@ -25,8 +25,8 @@ class ArenasController extends Controller
     }
 
     public function edit($id){
-        $arenas = Arena::find($id);
-        return view('arenas.edit', compact('arenas'));
+        $arena = Arena::find($id);
+        return view('arenas.edit', compact('arena'));
     }
     
     public function update(ArenaRequest $request, $id){

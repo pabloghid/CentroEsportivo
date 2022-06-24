@@ -37,7 +37,7 @@
               <span class="text-danger">{{ $errors->first('password') }}</span>
               @endif
             </div>
-
+            <div class="text-danger">Dados Inválidos, tente novamente</div>
             <div class="pt-1 mb-4">
               {!! Form::submit('Login', ['class'=>'btn btn-dark btn-lg btn-block']) !!}
             </div>

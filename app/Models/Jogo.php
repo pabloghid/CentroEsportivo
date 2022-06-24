@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Jogo extends Model
 {
     protected $table = 'jogos';
-    protected $fillable = ['usuario_id', 'horario_id', 'arena_id', 'modalidade_id'];
+    protected $fillable = ['usuario_id', 'horario_id', 'arena_id', 'modalidade_id', 'data'];
 }
 

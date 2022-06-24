@@ -9,66 +9,147 @@ use App\Models\Modalidade;
 use App\Http\Requests\JogoRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\Pessoa;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
+use Illuminate\Http\Request;
 
 class JogosController extends Controller
 {
-    public function index(){
-        $jogos = Jogo::all();
-        $pessoaId = Pessoa::firstWhere('email', 'pablog@gmail.com')->value('id');
-        $jogos = Jogo::Where('usuario_id', $pessoaId)->get();
-        return view('jogos.index', ['jogos'=>$jogos, 'usuarioId' => $pessoaId]);
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 
-    public function create(){
+    public function index()
+    {
+        $jogos = Jogo::all();
+        $user = Auth::id();
+        $jogos = Jogo::Where('usuario_id', $user)
+        ->whereDate('data', '>=', date("Y-m-d"))->get();
+        return view('jogos.index', ['jogos' => $jogos, 'usuarioId' => $user]);
+    }
+
+    public function create()
+    {
         $arenasDisponiveis = Arena::pluck('nome', 'id');
         $modalidadesDisponiveis = Modalidade::pluck('nome', 'id');
-        /// passar apenas as arenas. buscar outras infos por ajax;
-        return view('jogos.create', compact(['arenasDisponiveis', 'modalidadesDisponiveis']));
+
+        $token = '858c4b70060d59a05dac63fefa8fd578';
+        $response = Http::get('https://api.openweathermap.org/data/2.5/forecast?', [
+            'appid' => $token,
+            'q' => 'erechim',
+            'lang' => 'pt_br',
+            'units' => 'metric',
+        ]);
+        $tempFuturo = $response->json();
+
+        return view('jogos.create', compact(['arenasDisponiveis', 'modalidadesDisponiveis', 'tempFuturo']));
     }
 
     public function getHorarios()
     {
-        //$horariosDisponiveis = Horario::all();
+        $data = $_POST['data'];
+        $arena = $_POST['arena'];
+        $horariosDia = DB::table('jogos')->where('data', $data)->where('arena_id', $arena)->select('horario_id')->get();
+        $horariosUtilizados = [];
+        $count = 0;
+        foreach ($horariosDia as $horario) {
+            $horariosUtilizados[$count] = $horario->horario_id;
+            $count += 1;
+        }
         $horariosDisponiveis = DB::table('horarios')
-        ->leftJoin('jogos', 'horarios.id', '=', 'jogos.horario_id')
-        ->whereNull('jogos.horario_id')
-        //->toSql('horarios.id', 'horarios.hora_ini', 'horarios.hora_fim');
-        ->select('horarios.id', 'horarios.hora_ini', 'horarios.hora_fim')
-        ->get();
+            ->leftJoin('jogos', 'horarios.id', '=', 'jogos.horario_id')
+            ->whereNotIn('horarios.id', $horariosUtilizados)
+            ->select('horarios.id', 'horarios.hora_ini', 'horarios.hora_fim')
+            ->get();
 
-        //var_dump($horariosDisponiveis);
         return response()->json(array('horariosDisponiveis' => $horariosDisponiveis));
     }
 
-    //// criar tabela modalidades por arena
-/*     public function getArenas()
+    public function getArenas()
     {
-        //$horariosDisponiveis = Horario::all();
-        $arenasDisponiveis = DB::table('arenas')
-        ->leftJoin('modalidades', 'arenas.id', '=', 'modalidades.horario_id')
-        ->whereNull('jogos.horario_id')
+        $modalidade = $_POST['modalidade'];
+        $arenasSelect = DB::table('arena_modalidades')
+            ->where('modalidade_id', $modalidade)
+            ->select('arena_id', 'modalidade_id')
             ->get();
-
+        $arenasModalidade = [];
+        $count = 0;
+        foreach ($arenasSelect as $arena) {
+            $arenasModalidade[$count] = $arena->arena_id;
+            $count += 1;
+        }
+        $arenasDisponiveis = DB::table('arenas')
+            ->whereIn('id', $arenasModalidade)
+            ->select('id', 'nome')
+            ->get();
         return response()->json(array('arenasDisponiveis' => $arenasDisponiveis));
-    } */
-    
-    public function store(JogoRequest $request){
+    }
+
+    public function previsao($data = null)
+    {
+        // lat=-27.6352&lon=-52.2686
+        // https://apiadvisor.climatempo.com.br/api/v1/forecast/locale/3477/days/15?token=50174f220e7a6ff741ed668485ccf1b6&hash=ce9191e2d3fe10983fd85cd0a5061746
+        // 
+        //q=erechim&appid=858c4b70060d59a05dac63fefa8fd578&lang=pt_br
+        $token = '858c4b70060d59a05dac63fefa8fd578';
+        $response = Http::get('https://api.openweathermap.org/data/2.5/forecast?', [
+            'appid' => $token,
+            'q' => 'erechim',
+            'lang' => 'pt_br',
+            'units' => 'metric',
+        ]);
+        $tempoFuturo = $response->json();
+        $tempoDia = [];
+        $count = 0;
+        $tempoTotal = 0;
+
+        foreach ($tempoFuturo['list'] as $tempo) {
+            $dia = date('Y-m-d', strval($tempo['dt']));
+            if ($dia == $data) {
+                $tempoDia[$count] = $tempo;
+                $count = $count + 1;
+                $tempoTotal += $tempo['main']['temp'];
+            }
+        }
+        if (empty($tempoDia)) {
+            return view('jogos.tempoErro');
+        }
+        $mediaTempo = round($tempoTotal / $count);
+        $media = floor($count / 2);
+        return view('jogos.tempo', [
+            "dados" => $tempoDia,
+            "data" => strval($data),
+            "tempMedia" => $mediaTempo,
+            "media" => $media
+        ]);
+    }
+
+    public function getPrevisao1()
+    {
+        $token = '858c4b70060d59a05dac63fefa8fd578';
+        $response = Http::get('https://api.openweathermap.org/data/2.5/forecast?', [
+            'appid' => $token,
+            'q' => 'erechim',
+            'lang' => 'pt_br',
+            'units' => 'metric',
+        ]);
+        dump($response->json());
+        return view('jogos.teste', [
+            "dados" => $response->json()
+        ]);
+    }
+
+    public function store(JogoRequest $request)
+    {
         $novo_jogo = $request->all();
-        
-        $pessoaId = Pessoa::firstWhere('email', 'pablog@gmail.com')->value('id');
+
+        $pessoaId = Auth::id();
         $novo_jogo['usuario_id'] = $pessoaId;
         Jogo::create($novo_jogo);
-        
+
         return redirect()->route('jogos');
     }
- 
+
 }
-
-/* $horariosDisponiveis = DB::table('horarios')
-->leftJoin('jogos', function($join){
-    $join->on('id', '=', 'jogos.horarios_id')
-    ->where('jogos.horarios_id', 'is', 'null')
-    ->get();
-}); */
-
-//->pluck('horario, id');

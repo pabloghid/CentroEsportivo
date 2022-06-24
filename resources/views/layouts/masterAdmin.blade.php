@@ -25,7 +25,7 @@
 </head>
 
 <body style="background-color:#ffffe0">
-    @include('layouts.header')
+    @include('layouts.headerAdmin')
         <div class="container py-5">
             @yield('content')
         </div>

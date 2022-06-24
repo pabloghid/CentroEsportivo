@@ -21,11 +21,14 @@ Route::get('ajax', function () {
     return view('message');
 });
 
-Route::post('/getmsg','\App\Http\Controllers\AjaxController@index');
+Route::post('/getmsg', '\App\Http\Controllers\AjaxController@index');
 
 ///rotas para o ajax
-Route::post('/getHorarios','\App\Http\Controllers\JogosController@getHorarios');
-Route::post('/getArenas','\App\Http\Controllers\JogosController@getArenas');
+Route::post('/getHorarios', '\App\Http\Controllers\JogosController@getHorarios');
+Route::post('/getArenas', '\App\Http\Controllers\JogosController@getArenas');
+
+Route::get('/getPrevisao1', '\App\Http\Controllers\JogosController@getPrevisao1');
+Route::get('/teste', '\App\Http\Controllers\JogosController@teste');
 
 Route::get('jogos', [\App\Http\Controllers\JogosController::class, 'index']);
 Route::get('jogos/create', [\App\Http\Controllers\JogosController::class, 'create']);
@@ -75,6 +78,13 @@ Route::group(['prefix' => 'admin/administradores'], function () {
     Route::put('{id}/update',   ['as' => 'administradores.update',    'uses' => '\App\Http\Controllers\AdminController@update']);
 });
 
+Route::group(['prefix' => 'admin/pessoas'], function () {
+    Route::get('',              ['as' => 'pessoas',    'uses' => '\App\Http\Controllers\PessoaController@index']);
+    Route::get('{id}/destroy',  ['as' => 'pessoas.destroy',    'uses' => '\App\Http\Controllers\PessoaController@destroy']);
+    Route::get('{id}/edit',     ['as' => 'pessoas.edit',    'uses' => '\App\Http\Controllers\PessoaController@edit']);
+    Route::put('{id}/update',   ['as' => 'pessoas.update',    'uses' => '\App\Http\Controllers\PessoaController@update']);
+});
+
 Route::group(['prefix' => 'jogos'], function () {
     Route::get('',              ['as' => 'jogos',    'uses' => '\App\Http\Controllers\JogosController@index']);
     Route::get('create',       ['as' => 'jogos.create',    'uses' => '\App\Http\Controllers\JogosController@create']);
@@ -88,10 +98,11 @@ Route::group(['prefix' => 'login'], function () {
     Route::get('',             ['as' => 'login',    'uses' => '\App\Http\Controllers\LoginController@index']);
     Route::post('verificar',    ['as' => 'login.verificar',    'uses' => '\App\Http\Controllers\LoginController@verificar']);
     Route::get('sucesso',    ['as' => 'login.sucesso',    'uses' => '\App\Http\Controllers\LoginController@loginSucesso']);
+    Route::get('loginErro',    ['as' => 'login.loginErrro',    'uses' => '\App\Http\Controllers\LoginController@index']);
     /* Route::get('teste',    ['as' => 'login.teste',    'uses' => '\App\Http\Controllers\LoginController@index']); */
     /* Route::get('create',       ['as' => 'registrar',    'uses' => '\App\Http\Controllers\PessoaController@create']);
     Route::post('store',       ['as' => 'registrar.store',    'uses' => '\App\Http\Controllers\PessoaController@store']); */
-/*     Route::get('{id}/destroy',  ['as' => 'jogos.destroy',    'uses' => '\App\Http\Controllers\PessoaController@destroy']);
+    /*     Route::get('{id}/destroy',  ['as' => 'jogos.destroy',    'uses' => '\App\Http\Controllers\PessoaController@destroy']);
     Route::get('{id}/edit',     ['as' => 'jogos.edit',    'uses' => '\App\Http\Controllers\PessoaController@edit']);
     Route::put('{id}/update',   ['as' => 'jogos.update',    'uses' => '\App\Http\Controllers\JogosController@update']); */
 });
@@ -106,3 +117,24 @@ Route::get('registration', [AuthController::class, 'registration'])->name('regis
 Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout'); */
+
+
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/horarios', function () {
+    return view('selecHorario');
+});
+
+Route::get('/cadastro', function () {
+    return view('cadastro');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('',             ['as' => 'admin',    'uses' => 'App\Http\Controllers\AdministradorController@index']);
+});
+Route::get('/previsao{data?}', '\App\Http\Controllers\JogosController@previsao')->name('previsao');
+
+Route::get('logout', [\App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+Route::get('sobre', [\App\Http\Controllers\SobreController::class, 'sobre'])->name('sobre');;

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class JogoRequest extends FormRequest
+class RegistroRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,11 @@ class JogoRequest extends FormRequest
     public function rules()
     {
         return [
-            'horario_id' => 'required',
-            'arena_id' => 'required',
-            'modalidade_id' => 'required',
-            'data' => 'required',
+            'nome' => 'required',
+            'email' => 'required|email|unique:pessoas',
+            'password' => 'required|min:6',
+            'telefone' => 'required|min:11',
+            'login' => 'required|unique:pessoas'
         ];
     }
 }
