@@ -13,9 +13,6 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('jogos.create', []) }}">Marcar jogo</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('sobre', []) }}">Sobre</a>
-        </li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a class="nav-link" href="{{route('admin', []) }}">Admin</a></li>

@@ -89,10 +89,6 @@ class JogosController extends Controller
 
     public function previsao($data = null)
     {
-        // lat=-27.6352&lon=-52.2686
-        // https://apiadvisor.climatempo.com.br/api/v1/forecast/locale/3477/days/15?token=50174f220e7a6ff741ed668485ccf1b6&hash=ce9191e2d3fe10983fd85cd0a5061746
-        // 
-        //q=erechim&appid=858c4b70060d59a05dac63fefa8fd578&lang=pt_br
         $token = '858c4b70060d59a05dac63fefa8fd578';
         $response = Http::get('https://api.openweathermap.org/data/2.5/forecast?', [
             'appid' => $token,
@@ -134,6 +130,11 @@ class JogosController extends Controller
         $novo_jogo['usuario_id'] = $pessoaId;
         Jogo::create($novo_jogo);
 
+        return redirect()->route('jogos');
+    }
+
+    public function destroy($id) {
+        Jogo::find($id)->delete();
         return redirect()->route('jogos');
     }
 
