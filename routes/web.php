@@ -27,8 +27,7 @@ Route::post('/getmsg', '\App\Http\Controllers\AjaxController@index');
 Route::post('/getHorarios', '\App\Http\Controllers\JogosController@getHorarios');
 Route::post('/getArenas', '\App\Http\Controllers\JogosController@getArenas');
 
-Route::get('jogos', [\App\Http\Controllers\JogosController::class, 'index']);
-Route::get('jogos/create', [\App\Http\Controllers\JogosController::class, 'create']);
+Route::get('', [\App\Http\Controllers\JogosController::class, 'index']);
 
 Route::group(['prefix' => 'admin/modalidades'], function () {
     Route::get('',              ['as' => 'modalidades',    'uses' => '\App\Http\Controllers\ModalidadesController@index']);
@@ -89,6 +88,7 @@ Route::group(['prefix' => 'jogos'], function () {
     Route::get('{id}/destroy',  ['as' => 'jogos.destroy',    'uses' => '\App\Http\Controllers\JogosController@destroy']);
     Route::get('{id}/edit',     ['as' => 'jogos.edit',    'uses' => '\App\Http\Controllers\JogosController@edit']);
     Route::put('{id}/update',   ['as' => 'jogos.update',    'uses' => '\App\Http\Controllers\JogosController@update']);
+    Route::get('{id}/detalhesJogo',   ['as' => 'jogos.detalhes',    'uses' => '\App\Http\Controllers\JogosController@detalhesJogo']);
 });
 
 Route::group(['prefix' => 'login'], function () {

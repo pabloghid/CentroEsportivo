@@ -122,7 +122,7 @@
                 var $arenas = $('#arena_id').val();
                 console.log(Object.keys(data).length);
                 if (Object.keys(data).length > 0){
-                    var option = '<option>Selecione a modalidade</option>';
+                    var option = '<option>Selecione uma arena</option>';
                     $.each(data, function(i, obj){
                         $.each(obj, function(j, valores){
                             console.log(valores);

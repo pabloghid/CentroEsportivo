@@ -138,4 +138,9 @@ class JogosController extends Controller
         return redirect()->route('jogos');
     }
 
+    public function detalhesJogo($id)
+    {
+        $detalhesJogo = Jogo::find($id);
+        return  view('jogos.detalhes', compact('detalhesJogo'));
+    }
 }
