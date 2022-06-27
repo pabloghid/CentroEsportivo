@@ -26,9 +26,8 @@
                 <td>{{$modalidade->nome}} </td>
                 <td>
                   <a href="{{route('modalidades.edit', ['id'=>$modalidade->id]) }}"
-                    class="btn-sm  btn-success">Editar</a>
-                  <a href="{{route('modalidades.destroy', ['id'=>$modalidade->id]) }}"
-                    class="btn-sm  btn-danger">Excluir</a>
+                    class="btn btn-sm  btn-success">Editar</a>
+                    <a data-toggle="modal" data-target="#delete" class="btn btn-sm  btn-danger">Excluir</a>
                 </td>
               </tr>
               @endforeach
@@ -40,4 +39,24 @@
     </div>
   </div>
 </div>
-          @endsection
+<div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title text-center" id="myModalLabel">Confirmar exclusão</h4>
+          </div>
+          <form action="{{route('modalidades.destroy', ['id'=>$modalidade->id]) }}" method="get">
+              <div class="modal-body">
+                  <p class="text-center">
+                      Tem certeza que deseja excluir?
+                  </p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-dismiss="modal">Não, cancelar</button>
+                  <button type="submit" class="btn btn-warning">Sim, excluir</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+@endsection

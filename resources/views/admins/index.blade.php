@@ -26,8 +26,7 @@
                 <td>{{$admin->pessoa_id}} </td>
                 <td>{{\App\Models\Pessoa::find($admin->pessoa_id)->nome}} </td>
                 <td>
-                  <a href="{{route('administradores.destroy', ['id'=>$admin->id]) }}"
-                    class="btn-sm  btn-danger">Excluir</a>
+                  <a data-toggle="modal" data-target="#delete" class="btn btn-sm  btn-danger">Excluir</a>
                 </td>
               </tr>
               @endforeach
@@ -36,6 +35,26 @@
         </div>
         <a href="{{route('administradores.create', []) }}" class="btn  btn-info">Adicionar</a>
       </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center" id="myModalLabel">Confirmar exclusão</h4>
+      </div>
+      <form action="{{route('administradores.destroy', ['id'=>$admin->id]) }}" method="get">
+        <div class="modal-body">
+          <p class="text-center">
+            Tem certeza que deseja excluir?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Não, cancelar</button>
+          <button type="submit" class="btn btn-warning">Sim, excluir</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

@@ -8,15 +8,15 @@
                 <div class="row g-0">
 
                     <h2 style="font-family: Constantia; font-weight: bold; padding: 5px;  text-align: center;">
-                        Editando modalidade {{ $modalidade->nome }} </h2>
+                        Editando pessoa {{ $pessoa->nome }} </h2>
 
-                    {!! Form::open(['route'=> ["modalidades.update", 'id'=>$modalidade->id], 'method'=>'put']) !!}
+                    {!! Form::open(['route'=> ["pessoas.update", 'id'=>$pessoa->id], 'method'=>'put']) !!}
                     <div class="form-group mt-3">
-                        <h5 class="fw-normal mt-3" style="letter-spacing: 1px;">Nome da modalidade:</h5>
-                        {!! Form::text('nome', $modalidade->nome, ['class'=>'form-control', 'required']) !!}
+                        <h5 class="fw-normal mt-3" style="letter-spacing: 1px;">Nome:</h5>
+                        {!! Form::text('nome', $pessoa->nome, ['class'=>'form-control', 'required']) !!}
                     </div>
                     <div class="form-group mt-2">
-                        {!! Form::submit('Editar Modalidade', ['class'=>'btn btn-primary']) !!}
+                        {!! Form::submit('Editar Pessoa', ['class'=>'btn btn-warning']) !!}
                         {!! Form::reset('Limpar', ['class'=>'btn btn-default']) !!}
                     </div>
                     {!! Form::close() !!}

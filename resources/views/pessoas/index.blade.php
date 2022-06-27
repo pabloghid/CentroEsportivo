@@ -31,10 +31,8 @@
                 <td>{{$pessoa->email}} </td>
                 <td>{{$pessoa->login}} </td>
                 <td>
-                  <a href="{{route('pessoas.edit', ['id'=>$pessoa->id]) }}"
-                    class="btn-sm  btn-success">Editar</a>
-                  <a href="{{route('pessoas.destroy', ['id'=>$pessoa->id]) }}"
-                    class="btn-sm  btn-danger">Excluir</a>
+                  <a href="{{route('pessoas.edit', ['id'=>$pessoa->id]) }}" class="btn btn-sm  btn-success">Editar</a>
+                  <a data-toggle="modal" data-target="#delete" class="btn btn-sm  btn-danger">Excluir</a>
                 </td>
               </tr>
               @endforeach
@@ -42,6 +40,26 @@
           </table>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center" id="myModalLabel">Confirmar exclusão</h4>
+      </div>
+      <form action="{{route('pessoas.destroy', ['id'=>$pessoa->id]) }}" method="get">
+        <div class="modal-body">
+          <p class="text-center">
+            Tem certeza que deseja excluir?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Não, cancelar</button>
+          <button type="submit" class="btn btn-warning">Sim, excluir</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
