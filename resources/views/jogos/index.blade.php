@@ -36,7 +36,7 @@
                 <td>{{\App\Models\Arena::find($jogo->arena_id)->nome}} </td>
                 <td>{{\App\Models\Modalidade::find($jogo->modalidade_id)->nome}} </td>
                 <td>
-                  <a href="{{route('jogos.detalhes', ['id'=>$jogo->id]) }}" class="btn-sm  btn-info">Detalhes do Jogo</a>
+                  <a href="{{route('jogos.detalhes', ['id'=>$jogo->id]) }}" class="btn btn-sm  btn-success">Detalhes do Jogo</a>
                 </td>
               </tr>
               @endforeach

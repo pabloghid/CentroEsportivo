@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group mt-2 p-2">
                         <button class="btn btn-warning" type="submit">
-                            <span class="bi bi-card-checklist p-2"> Marcar Jogo</span>
+                            <span class="p-2"> Marcar Jogo</span>
                         </button>
                     </div>
                     {!! Form::close() !!}
@@ -126,7 +126,7 @@
                     $.each(data, function(i, obj){
                         $.each(obj, function(j, valores){
                             console.log(valores);
-                            option += '<option value="'+valores.id+'">'+valores.nome+'</option>';
+                            option += '<option value="'+valores.id+'">'+valores.nome+' - R$ '+valores.valor+'</option>';
                         })
                     })
                 }

@@ -82,7 +82,7 @@ class JogosController extends Controller
         }
         $arenasDisponiveis = DB::table('arenas')
             ->whereIn('id', $arenasModalidade)
-            ->select('id', 'nome')
+            ->select('id', 'nome', 'valor')
             ->get();
         return response()->json(array('arenasDisponiveis' => $arenasDisponiveis));
     }
